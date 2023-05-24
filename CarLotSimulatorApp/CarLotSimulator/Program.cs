@@ -29,6 +29,8 @@ namespace CarLotSimulator
             //Instanciate the a Carlot at the beginning of the program and as you create a car add the car to the list.
             //At the end iterate through the list printing each of car's Year, Make, and Model to the console
 
+
+            
             var carlot = new CarLot();
 
             var car1 = new Car();
@@ -37,11 +39,15 @@ namespace CarLotSimulator
             car1.Model = "Model S";
             car1.IsDrivable = true;
 
+            Console.WriteLine(CarLot.numberOfCars);
+
             car1.MyCar();
             car1.MakeEngineNoise();
             car1.MakeHonkNoise();
 
             carlot.ListOfCars.Add(car1);
+
+            Console.WriteLine(CarLot.numberOfCars);
 
             var car2 = new Car()
             {
@@ -57,13 +63,17 @@ namespace CarLotSimulator
 
             carlot.ListOfCars.Add(car2);
 
+            Console.WriteLine(CarLot.numberOfCars);
+
             var car3 = new Car(2006, "R Corvette", "C6", "Vroom", "Beep beep.", true);
 
             car3.MyCar2();
 
             carlot.ListOfCars.Add(car3);
 
-            foreach(var car in carlot.ListOfCars)
+            
+
+            foreach (var car in carlot.ListOfCars)
             {
                 Console.WriteLine($"This is a {car.Make} {car.Model} {car.Year}");
             }
